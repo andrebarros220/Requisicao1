@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<h:form name="title">
+
+		<link
+			href="https://fonts.googleapis.com/css?family=Lobster|Orbitron|Raleway"
+			rel="stylesheet"></link>
+
+		<p:menubar
+			style=" text-align: center; font-size: 15px ;font-family:Orbitron, sans-serif ">
+			<p:submenu label="   Home " icon="fa fa-home fa-fw"
+				style="text-align: center; font-size: 15px ;font-family:Orbitron, sans-serif">
+				<p:menuitem icon="fa fa-home fa-fw" value="  Home " url="inicio.xhtml" ajax="false" />
+				<p:menuitem icon="fa fa-cog fa-fw" value=" Configurações " url="Login.xhtml" ajax="false" /> 
+			</p:submenu>
+						
+			<p:submenu label=" Cadastro de Requisição " icon="fa fa-bolt fa-fw"
+				style="text-align: center; font-size: 15px ;font-family:Orbitron, sans-serif">
+				<p:menuitem icon="fa fa-barcode fa-fw" value=" Cadastrar Requisição "
+					url="cadastroRequisicao.xhtml" ajax="false" />
+			</p:submenu>
+			
+			<p:submenu label="   Sobre " icon="fa fa-comment-o fa-fw"
+				style="text-align: center; font-size: 15px ;font-family:Orbitron, sans-serif">
+				<p:menuitem icon="fa fa-comments-o fa-fw" value=" Sobre " url="faleConosco.xhtml"
+					ajax="false" />
+			</p:submenu>
+		</p:menubar>
+		<br />
+
+		<h1
+			style="font-size: 32px; font-family: Orbitron, sans-serif; text-align: center; overflow: hidden;">
+			EXTRA EYE </h1>
+	</h:form>
+</ui:composition>

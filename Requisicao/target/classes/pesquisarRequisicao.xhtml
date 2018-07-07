@@ -1,0 +1,120 @@
+<ui:composition template="templateMenu.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
+
+	<ui:define name="title" >
+<h:outputText value="Listar Requisicao" />
+	</ui:define>
+
+	<ui:define name="principal">
+		
+	<h1>Lista de Requisição </h1>
+	
+		<h1>Requisições Cadastradas</h1>
+		<h:form id="formTableRequisicoes">
+			<p:dataTable value="#{requisicaoManagedBean.listarequisicoes}"
+				         var="req"
+				         editable="true" 
+				         id="tableRequisicoes">
+
+				<p:ajax event="rowEdit"
+					listener="#{requisicaoManagedBean.onRowEdit}" />
+			
+				<p:column headerText="Código">
+					<p:cellEditor>
+						<f:facet name="output">
+							<p:outputLabel value="#{req.codigo}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText id="modelInput" value="#{req.codigo}"
+								style="width:100%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+				
+				<p:column headerText="Nome do Colaborador">
+					<p:cellEditor>
+						<f:facet name="output">
+							<p:outputLabel value="#{req.nome_colaborador}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText id="model" value="#{req.nome_colaborador}"
+								style="width:100%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+				
+				<p:column headerText="Part Number">
+					<p:cellEditor>
+						<f:facet name="output">
+							<p:outputLabel value="#{req.partnumber}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText id="model1" value="#{req.partnumber}" style="width:5%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Lado da Placa ">
+					<p:cellEditor>
+						<f:facet name="output">
+							<p:outputLabel value="#{req.ladoplaca}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText id="model2" value="#{req.ladoplaca}"
+								style="width:100%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Nome do Produto">
+					<p:cellEditor>
+						<f:facet name="output">
+							<p:outputLabel value="#{req.nome_produto}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText id="model3" value="#{req.nome_produto}"
+								style="width:100%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+
+				<p:column headerText="Comentario">
+					<p:cellEditor>
+						<f:facet name="output">
+							<p:outputLabel value="#{req.comentario}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText id="model4" value="#{req.comentario}"
+								style="width:100%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+				<p:column headerText="STATUS">
+					<p:cellEditor>
+						<f:facet name="output">
+							<p:outputLabel value="#{req.status}" />
+						</f:facet>
+						<f:facet name="input">
+							<p:inputText id="model5" value="#{req.status}"
+								style="width:100%" />
+						</f:facet>
+					</p:cellEditor>
+				</p:column>
+				<p:column style="width:70px" headerText="Opções">
+
+					<p:rowEditor />
+
+									</p:column>
+
+			</p:dataTable>
+			</h:form>
+		<br /> <br /> <br />
+		
+	</ui:define>
+
+</ui:composition>
